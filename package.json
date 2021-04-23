@@ -1,24 +1,30 @@
 {
-  "name": "with-typescript-styled-components",
-  "version": "1.0.0",
+  "name": "arachne",
+  "version": "0.0.1",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build --debug",
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "styled-components": "^5.0.0"
+    "bagofcrafting": "portal:../isaac-bagofcrafting",
+    "next": "10",
+    "react": "17",
+    "react-dom": "17",
+    "react-is": "^17.0.2",
+    "styled-components": "5"
   },
   "devDependencies": {
-    "@types/node": "12.0.12",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
-    "@types/styled-components": "5.0.1",
-    "babel-plugin-styled-components": "^1.10.0",
-    "typescript": "4.0"
+    "@types/node": "14",
+    "@types/react": "17",
+    "@types/react-dom": "17",
+    "@types/react-is": "^17",
+    "@types/styled-components": "5",
+    "@yarnpkg/pnpify": "^3.0.0-rc.3",
+    "babel-plugin-styled-components": "1",
+    "events": "latest",
+    "typescript": "4"
   },
+  "packageManager": "yarn@2.4.1",
   "license": "MIT"
 }
