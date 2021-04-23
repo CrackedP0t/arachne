@@ -14,9 +14,11 @@ jobs:
       - run: YARN_CHECKSUM_BEHAVIOR=ignore yarn install
       - run: yarn next build
       - run: yarn next export
+      - run: mv out /tmp/arachne_out
       - uses: actions/checkout@v2
         with:
           ref: gh-pages
-      - run: mv out/* .
+      - run: rm -rf *
+      - run: mv /tmp/arachne_out/* .
       - run: git commit -am "Deploy ${{ github.sha }}"
       - run: git push origin gh-pages
