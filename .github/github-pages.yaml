@@ -1,0 +1,12 @@
+steps:
+  - uses: actions/checkout@v2
+  - uses: actions/setup-node@v2
+    with:
+      node-version: '10.x'
+  - run: yarn install
+  - run: yarn next build
+  - run: yarn next export
+  - run: git checkout gh-pages
+  - run: mv out/* .
+  - run: git commit -am "Deploy ${{ github.sha }}"
+  - run: git push origin gh-pages
