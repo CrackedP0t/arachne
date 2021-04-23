@@ -22,6 +22,7 @@ jobs:
             rm -rf *
             touch .nojekyll
             mv /tmp/arachne_out/* .
+            echo "NEXT_PUBLIC_GITHUB_RUN_ID=$GITHUB_RUN_ID" > .env.local
             git config user.name github-actions
             git config user.email github-actions@github.com
             git add -A

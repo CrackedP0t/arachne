@@ -39,5 +39,5 @@
 .pickup {
     width: 32px;
     height: 32px;
-    background: url("/ui_crafting.png");
+    background: var(--ui_crafting);
 }

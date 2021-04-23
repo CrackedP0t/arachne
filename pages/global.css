@@ -1,3 +1,8 @@
+html {
+    --all_items: var(--gh_pages_all_items, url(/all_items.png));
+    --ui_crafting: var(--gh_pages_ui_crafting, url(/ui_crafting.png));
+}
+
 body {
     margin: 0;
     height: 100%;
