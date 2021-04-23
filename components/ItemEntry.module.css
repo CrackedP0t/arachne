@@ -16,6 +16,7 @@
 
 .slots {
     display: grid;
+    gap: 1vw;
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -25,10 +26,20 @@
 }
 
 .thread {
+    cursor: pointer;
     border: solid black;
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.thread:hover {
+    border: solid red;
+}
+
+.thread.selected {
+    border: solid red;
+    background-color: red;
 }
 
 .pickup {

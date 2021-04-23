@@ -13,7 +13,7 @@ type State = {
     components: number[]
 }
 
-const Pickup = ({ cont, index }: { cont: ItemEntry, index: number }) => {
+const Pickup = ({ cont, pickup_id, index }: { cont: ItemEntry, pickup_id: number, index: number }) => {
     const pickup_names: Array<string> = [
         "Heart", "Soul Heart", "Black Heart", "Eternal Heart", "Gold Heart", "Bone Heart", "Rotten Heart",
         "Penny", "Nickel", "Dime", "Lucky Penny",
@@ -27,29 +27,28 @@ const Pickup = ({ cont, index }: { cont: ItemEntry, index: number }) => {
         <div className={styles.slot}>
             <div className={styles.threads}>
                 {pickup_names.map((name, p) => {
+                    p = p + 1;
                     let components = Array.from(cont.state.components);
-                    components[index] = p + 1;
+                    components[index] = p;
                     let item_id = cont.props.bag.calculate(components);
                     let item_name = cont.props.items[item_id].name;
-                    return <div key={p} className={styles.thread}>
-                        <div className={styles.pickup} style={{
-                            backgroundPositionX: (p + 1) % 8 * -32,
-                            backgroundPositionY: Math.floor((p + 1) / 8) * -32
-                            }}></div>
+                    return <div key={p} className={`${styles.thread} ${p == pickup_id ? styles.selected : ""}`} onClick={_ev =>
+                        cont.setState((state: State, _props: Props) => {
+                            let comps = Array.from(state.components);
+                            comps[index] = p;
+                            return { components: comps }
+                        })}>
+                        <div className={styles.pickup} title={name} style={{
+                            backgroundPositionX: (p) % 8 * -32,
+                            backgroundPositionY: Math.floor((p) / 8) * -32
+                        }}></div>
+                        ⇒
                         <div className={`sprite i${item_id}`} title={item_name}></div>
                     </div>;
                 })}
             </div>
-            <select value={cont.state.components[index]} onChange={ev =>
-                cont.setState((state: State, _props: Props) => {
-                    let comps = Array.from(state.components);
-                    comps[index] = parseInt(ev.target.value);
-                    return { components: comps }
-                })}>
-                {pickup_names.map((name, p) => (<option key={p} value={p + 1}>{name}</option>))}
-            </select>
         </div>
-    )
+    );
 };
 
 const ItemBox = ({ item_id, name }: { item_id: number, name: string }) => (
@@ -73,7 +72,7 @@ class ItemEntry extends React.Component<Props, State> {
                 <ItemBox item_id={item_id} name={this.props.items[item_id].name} />
             </div>
             <div className={styles.slots}>
-                {this.state.components.map((_pickup, p_index) => <Pickup cont={this} index={p_index} key={p_index} />)}
+                {this.state.components.map((pickup_id, p_index) => <Pickup cont={this} pickup_id={pickup_id} index={p_index} key={p_index} />)}
             </div>
         </div>;
     }
