@@ -20,6 +20,7 @@ jobs:
           ref: gh-pages
       - run: |
             rm -rf *
+            touch .nojekyll
             mv /tmp/arachne_out/* .
             git config user.name github-actions
             git config user.email github-actions@github.com
