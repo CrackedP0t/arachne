@@ -23,5 +23,6 @@ jobs:
             mv /tmp/arachne_out/* .
             git config user.name github-actions
             git config user.email github-actions@github.com
-            git commit -am "Deploy ${{ github.sha }}"
+            git add -A
+            git commit -m "Deploy ${{ github.sha }}"
             git push origin gh-pages
