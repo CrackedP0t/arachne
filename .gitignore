@@ -4,7 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-/.yarn/*
+
+# Yarn 2
+.yarn/*
+!.yarn/releases/
 !.yarn/plugins/
 
 # testing
