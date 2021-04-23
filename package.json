@@ -10,19 +10,14 @@
     "bagofcrafting": "portal:../isaac-bagofcrafting",
     "next": "10",
     "react": "17",
-    "react-dom": "17",
-    "react-is": "^17.0.2",
-    "styled-components": "5"
+    "react-dom": "17"
   },
   "devDependencies": {
     "@types/node": "14",
     "@types/react": "17",
     "@types/react-dom": "17",
     "@types/react-is": "^17",
-    "@types/styled-components": "5",
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
-    "babel-plugin-styled-components": "1",
-    "events": "latest",
     "typescript": "4"
   },
   "packageManager": "yarn@2.4.1",
