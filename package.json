@@ -7,7 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "bagofcrafting": "github:CrackedP0t/isaac-bagofcrafting#head=master",
+    "bagofcrafting": "CrackedP0t/isaac-bagofcrafting",
     "next": "10",
     "react": "17",
     "react-dom": "17"

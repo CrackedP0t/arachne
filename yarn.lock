@@ -588,6 +588,7 @@ __metadata:
     "@types/react-dom": 17
     "@types/react-is": ^17
     "@yarnpkg/pnpify": ^3.0.0-rc.3
+    bagofcrafting: CrackedP0t/isaac-bagofcrafting
     next: 10
     react: 17
     react-dom: 17
@@ -689,6 +690,16 @@ __metadata:
   version: 6.18.0
   resolution: "babel-plugin-syntax-jsx@npm:6.18.0"
   checksum: a5c8174ad6165d5f541f9f31cf4b6338ccfb7d586cec111537fa567f13b5fbdcf54f7928db44429d4610aa1be9d07bb03d017b22ba521ff819a6a2090b694797
+  languageName: node
+  linkType: hard
+
+bagofcrafting@CrackedP0t/isaac-bagofcrafting:
+  version: 1.0.0
+  resolution: "bagofcrafting@https://github.com/CrackedP0t/isaac-bagofcrafting.git#commit=c13f6b2e4190b1e5312f7ff1dfb0b261595a4b28"
+  dependencies:
+    fast-xml-parser: 3
+    lodash: 4
+  checksum: 04e670e2731ad94d89437e5eac012e860716c66aec4d70e57c17d499b47e2a0f7f8919f4e982623a19cd070d42315c957796ce805e96d825fc4f0bdb2258cdab
   languageName: node
   linkType: hard
 
@@ -1579,6 +1590,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-xml-parser@npm:3":
+  version: 3.19.0
+  resolution: "fast-xml-parser@npm:3.19.0"
+  bin:
+    xml2js: cli.js
+  checksum: bac00722d00f7f8782ab507281bff3c5cff2b37e2e1e26891a11ac2ac3f0c40e91f545492923d6dc8a57bdf9cfba99518c02ddff380f4ff1e81083d25055e43e
+  languageName: node
+  linkType: hard
+
 "fastq@npm:^1.6.0":
   version: 1.11.0
   resolution: "fastq@npm:1.11.0"
@@ -2339,7 +2359,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.13, lodash@npm:^4.17.15":
+"lodash@npm:4, lodash@npm:^4.17.13, lodash@npm:^4.17.15":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 4983720b9abca930a4a46f18db163d7dad8dd00dbed6db0cc7b499b33b717cce69f80928b27bbb1ff2cbd3b19d251ee90669a8b5ea466072ca81c2ebe91e7468
