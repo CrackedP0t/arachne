@@ -9,6 +9,12 @@ function arrRotateLeft<T>(a: Array<T>): Array<T> {
     return a;
 }
 
+function arrRotateRight<T>(a: Array<T>): Array<T> {
+    let i = a.pop();
+    if (i) a.unshift(i);
+    return a;
+}
+
 type Props = {
     bag: BagOfCrafting,
     components: number[],
@@ -78,7 +84,10 @@ export default class ItemEntry extends React.Component<Props, State> {
                 <ItemBox item_id={item_id} name={this.props.items[item_id].name} />
                 <button onClick={_ev => {this.setState((state, _props) => {
                     return {components: arrRotateLeft(Array.from(state.components))};
-                })}}>⤺</button>
+                })}}>↶</button>
+                <button onClick={_ev => {this.setState((state, _props) => {
+                    return {components: arrRotateRight(Array.from(state.components))};
+                })}}>↷</button>
             </div>
             <div className={styles.slots}>
                 {this.state.components.map((pickup_id, p_index) => <Slot cont={this} pickup_id={pickup_id} index={p_index} key={p_index} />)}
