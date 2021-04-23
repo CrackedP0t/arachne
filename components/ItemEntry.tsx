@@ -3,6 +3,12 @@ import * as React from 'react';
 
 import styles from "./ItemEntry.module.css";
 
+function arrRotateLeft<T>(a: Array<T>): Array<T> {
+    let i = a.shift();
+    if (i) a.push(i);
+    return a;
+}
+
 type Props = {
     bag: BagOfCrafting,
     components: number[],
@@ -13,7 +19,7 @@ type State = {
     components: number[]
 }
 
-const Pickup = ({ cont, pickup_id, index }: { cont: ItemEntry, pickup_id: number, index: number }) => {
+const Slot = ({ cont, pickup_id, index }: { cont: ItemEntry, pickup_id: number, index: number }) => {
     const pickup_names: Array<string> = [
         "Heart", "Soul Heart", "Black Heart", "Eternal Heart", "Gold Heart", "Bone Heart", "Rotten Heart",
         "Penny", "Nickel", "Dime", "Lucky Penny",
@@ -52,13 +58,13 @@ const Pickup = ({ cont, pickup_id, index }: { cont: ItemEntry, pickup_id: number
 };
 
 const ItemBox = ({ item_id, name }: { item_id: number, name: string }) => (
-    <>
+    <div>
         <div>{name}</div>
         <div className={`sprite big i${item_id}`}></div>
-    </>
+    </div>
 );
 
-class ItemEntry extends React.Component<Props, State> {
+export default class ItemEntry extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
@@ -70,12 +76,13 @@ class ItemEntry extends React.Component<Props, State> {
         return <div className={styles.item_entry}>
             <div className={styles.item}>
                 <ItemBox item_id={item_id} name={this.props.items[item_id].name} />
+                <button onClick={_ev => {this.setState((state, _props) => {
+                    return {components: arrRotateLeft(Array.from(state.components))};
+                })}}>⤺</button>
             </div>
             <div className={styles.slots}>
-                {this.state.components.map((pickup_id, p_index) => <Pickup cont={this} pickup_id={pickup_id} index={p_index} key={p_index} />)}
+                {this.state.components.map((pickup_id, p_index) => <Slot cont={this} pickup_id={pickup_id} index={p_index} key={p_index} />)}
             </div>
         </div>;
     }
 }
-
-export default ItemEntry;

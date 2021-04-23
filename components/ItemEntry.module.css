@@ -4,7 +4,8 @@
 }
 
 .item {
-    grid-area: 2 / 2 / span 2 / span 2;
+    display: flex;
+    flex-direction: row;
 }
 
 .item_box {
