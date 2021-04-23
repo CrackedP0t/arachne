@@ -695,11 +695,11 @@ __metadata:
 
 bagofcrafting@CrackedP0t/isaac-bagofcrafting:
   version: 1.0.0
-  resolution: "bagofcrafting@https://github.com/CrackedP0t/isaac-bagofcrafting.git#commit=d2d4644f8afcf9c7dfad0e2685f1fe566e43f746"
+  resolution: "bagofcrafting@https://github.com/CrackedP0t/isaac-bagofcrafting.git#commit=9d174fff52cbac26c1989804c48a63858c1c2268"
   dependencies:
     fast-xml-parser: 3
     lodash: 4
-  checksum: 2e8906a95e97079d3d6d9fe0785f0b096f0ac00e927755860d661118f5bed9715161e3b2d56bfcbd5fa9bc85840bde8dcbfbd0d66b82b4f33e4d5b5206707675
+  checksum: f2199e4249a8f22d525da70349d7be658c8d2bb0ad045fbd98f0ee1f8debaf51477b58176096386b8c948230d81f4344723f8946d37a955d02a91bdbac1b64ea
   languageName: node
   linkType: hard
 
