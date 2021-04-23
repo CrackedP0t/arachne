@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: '16.x'
       - run: yarn cache clean
-      - run: yarn install
+      - run: YARN_CHECKSUM_BEHAVIOR=ignore yarn install
       - run: yarn next build
       - run: yarn next export
       - run: git checkout gh-pages
