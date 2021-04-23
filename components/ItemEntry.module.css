@@ -1,0 +1,20 @@
+.item_entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.pickups {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.item_box {
+    background: url("/all_items.png");
+    width: 32px;
+    height: 32px;
+    transform: scale(2);
+}
