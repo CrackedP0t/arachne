@@ -1,15 +1,10 @@
 .item_entry {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 50%;
 }
 
-.pickups {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+.item {
+    grid-area: 2 / 2 / span 2 / span 2;
 }
 
 .item_box {
@@ -17,4 +12,27 @@
     width: 32px;
     height: 32px;
     transform: scale(2);
+}
+
+.slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.threads {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.thread {
+    border: solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pickup {
+    width: 32px;
+    height: 32px;
+    background: url("/ui_crafting.png");
 }

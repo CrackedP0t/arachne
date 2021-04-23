@@ -16,7 +16,7 @@ export async function getStaticProps(): Promise<{ props: StaticProps }> {
     props: {
       itempools: await readFile("assets/itempools.xml", "utf8"),
       items_metadata: await readFile("assets/items_metadata.xml", "utf8"),
-      items: await readFile("assets/items.json", "utf-8")
+      items: await readFile("assets/items.json", "utf8")
     }
   };
 }
